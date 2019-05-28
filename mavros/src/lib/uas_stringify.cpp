@@ -118,7 +118,10 @@ static const cmode_map ardusub_cmode_map{{
 	{ 16, "POSHOLD" },
 	{ 17, "BRAKE" },	// n/a
 	{ 18, "THROW" },
-	{ 19, "MANUAL" }
+    { 19, "MANUAL" },
+    { 20, "MD_STABILIZE" },
+    { 21, "MD_ALT_HOLD" },
+    { 22, "MD_NET_TRACKING" }
 }};
 
 //! PX4 custom mode -> string
