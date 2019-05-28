@@ -41,6 +41,7 @@ add_message_files(
   RadioStatus.msg
   State.msg
   StatusText.msg
+  StereoVision.msg
   Thrust.msg
   TimesyncStatus.msg
   Trajectory.msg
