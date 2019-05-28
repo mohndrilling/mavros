@@ -52,5 +52,8 @@
 	</class>
 	<class name="companion_process_status" type="mavros::extra_plugins::CompanionProcessStatusPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Send companion process status report to the FCU.</description>
-	</class>
+        </class>
+        <class name="stereovision" type="mavros::extra_plugins::StereoVisionPlugin" base_class_type="mavros::plugin::PluginBase">
+                <description>Accepts Stereo Vision Data </description>
+        </class>
 </library>
