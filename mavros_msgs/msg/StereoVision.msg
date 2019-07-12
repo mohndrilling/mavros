@@ -7,4 +7,5 @@ float32 distance
 float32 delta_pitch
 float32 delta_yaw
 uint32 mesh_count
+float32 mesh_distr
 geometry_msgs/Vector3 v_body

@@ -42,6 +42,7 @@ private:
         svo.lin_velocity[2] = float(msg->v_body.z);
 
         svo.mesh_count = msg->mesh_count;
+        svo.mesh_distr = msg->mesh_distr;
 
         UAS_FCU(m_uas)->send_message_ignore_drop(svo);
     }
