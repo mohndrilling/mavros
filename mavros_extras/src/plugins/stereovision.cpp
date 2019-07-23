@@ -37,9 +37,9 @@ private:
         svo.delta_pitch = msg->delta_pitch;
         svo.delta_yaw = msg->delta_yaw;
 
-        svo.lin_velocity[0] = float(msg->v_body.x);
-        svo.lin_velocity[1] = float(msg->v_body.y);
-        svo.lin_velocity[2] = float(msg->v_body.z);
+        // ignore z component
+        svo.opt_flow[0] = float(msg->opt_flow.x);
+        svo.opt_flow[1] = float(msg->opt_flow.y);
 
         svo.mesh_count = msg->mesh_count;
         svo.mesh_distr = msg->mesh_distr;
