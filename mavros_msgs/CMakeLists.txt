@@ -40,10 +40,12 @@ add_message_files(
   ManualControl.msg
   Mavlink.msg
   MountControl.msg
+  NetInspection.msg
   OpticalFlowRad.msg
   OverrideRCIn.msg
   Param.msg
   ParamValue.msg
+  PhaseCorr.msg
   PlayTuneV2.msg
   PositionTarget.msg
   RCIn.msg
