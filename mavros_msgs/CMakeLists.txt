@@ -30,10 +30,12 @@ add_message_files(
   LogEntry.msg
   ManualControl.msg
   Mavlink.msg
+  NetInspection.msg
   OpticalFlowRad.msg
   OverrideRCIn.msg
   Param.msg
   ParamValue.msg
+  PhaseCorr.msg
   PositionTarget.msg
   RCIn.msg
   RCOut.msg
