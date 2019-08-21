@@ -77,6 +77,7 @@ public:
 		arming_srv = cmd_nh.advertiseService("arming", &CommandPlugin::arming_cb, this);
 		set_home_srv = cmd_nh.advertiseService("set_home", &CommandPlugin::set_home_cb, this);
 		takeoff_srv = cmd_nh.advertiseService("takeoff", &CommandPlugin::takeoff_cb, this);
+        return_home_srv = cmd_nh.advertiseService("return_home", &CommandPlugin::return_home_cb, this);
 		land_srv = cmd_nh.advertiseService("land", &CommandPlugin::land_cb, this);
 		trigger_control_srv = cmd_nh.advertiseService("trigger_control", &CommandPlugin::trigger_control_cb, this);
 		trigger_interval_srv = cmd_nh.advertiseService("trigger_interval", &CommandPlugin::trigger_interval_cb, this);
@@ -101,6 +102,7 @@ private:
 	ros::ServiceServer arming_srv;
 	ros::ServiceServer set_home_srv;
 	ros::ServiceServer takeoff_srv;
+    ros::ServiceServer return_home_srv;
 	ros::ServiceServer land_srv;
 	ros::ServiceServer trigger_control_srv;
 	ros::ServiceServer trigger_interval_srv;
@@ -355,6 +357,16 @@ private:
 			req.latitude, req.longitude, req.altitude,
 			res.success, res.result);
 	}
+
+    bool return_home_cb(mavros_msgs::CommandBool::Request &req,
+            mavros_msgs::CommandBool::Response &res)
+    {
+        using mavlink::common::MAV_CMD;
+        return send_command_long_and_wait(false,
+                enum_value(MAV_CMD::NAV_RETURN_TO_LAUNCH), 1,
+                0, 0, 0, 0, 0, 0, 0,
+                res.success, res.result);
+    }
 
 	bool land_cb(mavros_msgs::CommandTOL::Request &req,
 		mavros_msgs::CommandTOL::Response &res)
