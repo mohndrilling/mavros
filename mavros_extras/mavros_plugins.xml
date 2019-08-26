@@ -11,6 +11,9 @@
 	<class name="onboard_computer_status" type="mavros::extra_plugins::OnboardComputerStatusPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Send component hadware status to FCU and Groundstation.</description>
 	</class>
+    <class name="debug_parser" type="mavros::extra_plugins::DebugParserPlugin" base_class_type="mavros::plugin::PluginBase">
+        <description>Parses named float debug messages and publishes them to distinct topics</description>
+    </class>
 	<class name="debug_value" type="mavros::extra_plugins::DebugValuePlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Subs/Pubs debug msgs from and to the FCU.</description>
 	</class>
@@ -52,7 +55,10 @@
 	</class>
 	<class name="rangefinder" type="mavros::extra_plugins::RangefinderPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Publish RANGEFINDER message data from FCU sensors in companion computer.</description>
-	</class>
+	</class>        
+        <class name="stereovision" type="mavros::extra_plugins::StereoVisionPlugin" base_class_type="mavros::plugin::PluginBase">
+                <description>Accepts Stereo Vision Data </description>
+        </class>
 	<class name="trajectory" type="mavros::extra_plugins::TrajectoryPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Receive planned path from the FCU and send back corrected path (collision free, smoothed) to the FCU.</description>
 	</class>
@@ -71,7 +77,4 @@
 	<class name="mount_control" type="mavros::extra_plugins::MountControlPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Send Mission command to control a camera or a antenna mount.</description>
 	</class>
-    <class name="stereovision" type="mavros::extra_plugins::StereoVisionPlugin" base_class_type="mavros::plugin::PluginBase">
-        <description>Accepts Stereo Vision Data </description>
-    </class>
 </library>
