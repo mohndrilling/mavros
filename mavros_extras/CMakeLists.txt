@@ -68,6 +68,7 @@ add_library(mavros_extras
   src/plugins/adsb.cpp
   src/plugins/cam_imu_sync.cpp
   src/plugins/companion_process_status.cpp
+  src/plugins/debug_parser.cpp
   src/plugins/debug_value.cpp
   src/plugins/distance_sensor.cpp
   src/plugins/fake_gps.cpp
@@ -78,12 +79,12 @@ add_library(mavros_extras
   src/plugins/odom.cpp
   src/plugins/px4flow.cpp
   src/plugins/rangefinder.cpp
+  src/plugins/stereovision.cpp
   src/plugins/trajectory.cpp
   src/plugins/vibration.cpp
   src/plugins/vision_pose_estimate.cpp
   src/plugins/vision_speed_estimate.cpp
   src/plugins/wheel_odometry.cpp
-  src/plugins/stereovision.cpp
 )
 add_dependencies(mavros_extras
   ${catkin_EXPORTED_TARGETS}
