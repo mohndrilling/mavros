@@ -1,4 +1,4 @@
-# OpticalFlow2D message
+# NetInspection message
 # time_usec: timestamp of message creation in micro seconds since ros started
 # time_delta_usec: elapsed time since last reading in micro seconds
 # mesh_distribution: ratio (0...1) between net meshes on left image side and all the detected net meshes (used for net edge detection)
