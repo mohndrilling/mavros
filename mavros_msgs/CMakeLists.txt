@@ -41,6 +41,7 @@ add_message_files(
   Mavlink.msg
   MountControl.msg
   NetInspection.msg
+  NetTrackingState.msg
   OpticalFlowRad.msg
   OverrideRCIn.msg
   Param.msg
