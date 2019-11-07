@@ -355,9 +355,9 @@ private:
     bool return_home_cb(mavros_msgs::CommandBool::Request &req,
             mavros_msgs::CommandBool::Response &res)
     {
-        using mavlink::common::MAV_CMD;
+        using mavlink::ardupilotmega::MAV_CMD;
         return send_command_long_and_wait(false,
-                enum_value(MAV_CMD::NAV_RETURN_TO_LAUNCH), 1,
+                enum_value(MAV_CMD::NETTR_RETURN_TO_LAUNCH), 1,
                 0, 0, 0, 0, 0, 0, 0,
                 res.success, res.result);
     }
