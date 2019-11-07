@@ -1,6 +1,6 @@
 #include <mavros/mavros_plugin.h>
 #include <iostream>
-#include <std_msgs/UInt8.h>
+#include <mavros_msgs/NetTrackingState.h>
 
 namespace mavros {
 namespace extra_plugins {
@@ -13,7 +13,7 @@ public:
     void initialize(UAS &uas_)
     {
         PluginBase::initialize(uas_);
-        net_tracking_pub = nh.advertise<std_msgs::UInt8>("state", 10);
+        net_tracking_pub = nh.advertise<mavros_msgs::NetTrackingState>("state", 10);
     };
 
     Subscriptions get_subscriptions()
@@ -35,8 +35,9 @@ private:
     void handle_nettr_state(const mavlink::mavlink_message_t *msg, mavlink::ardupilotmega::msg::NETTRACKING_STATE &nettr_state)
     {
         //publish net tracking state
-        std_msgs::UInt8 nettr_state_msg;
-        nettr_state_msg.data = nettr_state.state;
+        mavros_msgs::NetTrackingState nettr_state_msg;
+        nettr_state_msg.state = nettr_state.state;
+        nettr_state_msg.loop_progress = nettr_state.loop_progress;
 
         net_tracking_pub.publish(nettr_state_msg);
     }
