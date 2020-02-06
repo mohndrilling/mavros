@@ -3,6 +3,7 @@
 #include <mavros_msgs/StereoVision.h>
 #include <mavros_msgs/NetInspection.h>
 #include <mavros_msgs/PhaseCorr.h>
+#include <mavros_msgs/NetTrackingMarker.h>
 
 namespace mavros {
 namespace extra_plugins {
@@ -18,6 +19,7 @@ public:
         stereo_vision_sub = nh.subscribe("net_tracking", 10, &StereoVisionPlugin::stereo_vision_cb, this);
         net_insp_sub = nh.subscribe("net_inspection", 10, &StereoVisionPlugin::net_insp_cb, this);
         phase_corr_sub = nh.subscribe("phase_corr", 10, &StereoVisionPlugin::phase_corr_cb, this);
+        nettr_marker_sub = nh.subscribe("optical_marker", 10, &StereoVisionPlugin::optical_marker_cb, this);
     };
 
     Subscriptions get_subscriptions()
@@ -30,6 +32,7 @@ private:
     ros::Subscriber stereo_vision_sub;
     ros::Subscriber net_insp_sub;
     ros::Subscriber phase_corr_sub;
+    ros::Subscriber nettr_marker_sub;
 
     void stereo_vision_cb(const mavros_msgs::StereoVision::ConstPtr &msg)
     {
@@ -78,6 +81,21 @@ private:
         pc.phase_shift_sum_y = msg->phase_shift_sum_y;
 
         UAS_FCU(m_uas)->send_message_ignore_drop(pc);
+
+    }
+
+    void optical_marker_cb(const mavros_msgs::NetTrackingMarker::ConstPtr &msg)
+    {
+        mavlink::ardupilotmega::msg::NETTRACKING_MARKER nm {};
+
+        nm.time_usec = msg->time_usec;
+        nm.time_delta_usec = msg->time_delta_usec;
+
+        nm.marker_visible = msg->marker_visible ? 1 : 0;
+        nm.terminate = msg->terminate ? 1 : 0;
+        nm.horizontal_pos = msg->horizontal_pos;
+
+        UAS_FCU(m_uas)->send_message_ignore_drop(nm);
 
     }
 };
