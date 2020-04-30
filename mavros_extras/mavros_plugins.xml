@@ -2,6 +2,9 @@
 	<class name="adsb" type="mavros::extra_plugins::ADSBPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Publish/subscribe to the location and information of an ADS-B vehicle.</description>
 	</class>
+        <class name="aquabot" type="mavros::extra_plugins::AquaBotPlugin" base_class_type="mavros::plugin::PluginBase">
+           <description>Receives aquabot related messages from FCU</description>
+        </class>
 	<class name="cam_imu_sync" type="mavros::extra_plugins::CamIMUSyncPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Publish camera trigger data for synchronisation of IMU and camera frames.</description>
 	</class>
@@ -40,9 +43,6 @@
 	</class>
 	<class name="mocap_pose_estimate" type="mavros::extra_plugins::MocapPoseEstimatePlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Send motion capture pose estimate to FCU.</description>
-	</class>
-        <class name="nettracking" type="mavros::extra_plugins::NetTrackingPlugin" base_class_type="mavros::plugin::PluginBase">
-           <description>Receives net tracking state messages from FCU</description>
         </class>
 	<class name="obstacle_distance" type="mavros::extra_plugins::ObstacleDistancePlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Send obstacle distance report to the FCU.</description>

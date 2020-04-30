@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
+  std_srvs
   tf
   tf2_eigen
   urdf
@@ -66,6 +67,7 @@ include_directories(
 
 add_library(mavros_extras
   src/plugins/adsb.cpp
+  src/plugins/aquabot.cpp
   src/plugins/cam_imu_sync.cpp
   src/plugins/companion_process_status.cpp
   src/plugins/onboard_computer_status.cpp
@@ -79,7 +81,6 @@ add_library(mavros_extras
   src/plugins/landing_target.cpp
   src/plugins/log_transfer.cpp
   src/plugins/mocap_pose_estimate.cpp
-  src/plugins/nettracking.cpp
   src/plugins/obstacle_distance.cpp
   src/plugins/odom.cpp
   src/plugins/play_tune.cpp
