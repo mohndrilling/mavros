@@ -7,6 +7,7 @@
 # terminate Whether a termination marker is currently detected
 # horizontal_pos Horizontal position of the upper visible marker normalized to the image width (-1 ... +1)
 
+std_msgs/Header header
 uint64 time_usec
 uint64 time_delta_usec
 bool marker_visible

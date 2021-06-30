@@ -6,6 +6,7 @@
 # delta_yaw:        yaw offset (radians) between the optical axis of the camera and the normal vector of the regarded surface
 
 # message data
+std_msgs/Header header
 uint64 time_usec
 uint64 time_delta_usec
 float32 distance

@@ -7,6 +7,7 @@
 # phase_shift_sum_y: integrated translational y-shift since first received image
 
 # message data
+std_msgs/Header header
 uint64 time_usec
 uint64 time_delta_usec
 float64 phase_shift_x

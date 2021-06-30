@@ -6,6 +6,7 @@
 # mesh_count: count of all the detected currently visible net meshes
 
 # message data
+std_msgs/Header header
 uint64 time_usec
 uint64 time_delta_usec
 float64 mesh_distribution
