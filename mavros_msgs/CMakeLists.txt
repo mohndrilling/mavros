@@ -64,6 +64,7 @@ add_message_files(
   VFR_HUD.msg
   VehicleInfo.msg
   Vibration.msg
+  VisualOdometry.msg
   Waypoint.msg
   WaypointList.msg
   WaypointReached.msg
